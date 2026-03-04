@@ -26,6 +26,22 @@ export function Footer() {
             the Google Apps Script editor to your WakaTime dashboard.
           </p>
         </div>
+        <div>
+            <a
+              href="/"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-xs text-[var(--sea-ink)] opacity-75 hover:opacity-100 transition-opacity no-underline hover:no-underline"
+            >
+              Home
+            </a>
+            <a
+              href="/privacy_policy"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-xs text-[var(--sea-ink)] opacity-75 hover:opacity-100 transition-opacity no-underline hover:no-underline"
+            >
+              Privacy Policy
+            </a>
+        </div>
         <div className="flex flex-col items-center gap-4 md:items-end">
           <div className="flex items-center gap-6">
             <a

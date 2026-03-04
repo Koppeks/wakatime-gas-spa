@@ -2,13 +2,12 @@ import Badge from './ui/Badge'
 import { Button } from './ui/Button'
 import { SiGooglechrome } from '@icons-pack/react-simple-icons'
 import { ArrowDown } from 'lucide-react'
-import WakaTimePopup from './PopupShowcase'
 
 export default function Hero() {
   return (
     <div
       id="hero"
-      className="flex flex-col md:flex-row items-center justify-between w-full h-[94dvh] relative px-6 md:px-20 py-12 md:py-0 gap-8"
+      className="flex flex-col lg:flex-row items-center justify-between w-full h-[94dvh] relative px-6 md:px-20 py-12 md:py-0 gap-8"
     >
       <section className="relative overflow-hidden flex flex-col items-center px-6 py-10 sm:px-10 sm:py-14">
         <Badge>Open Source Wakatime Browser Extension</Badge>
@@ -24,9 +23,9 @@ export default function Hero() {
           WakaTime dashboard instantly.
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          <Button variant="default">
+          <Button href="#" variant="default">
             <SiGooglechrome className="size-4" />
-            Get Started
+            Get this extension
           </Button>
           <Button href="/#how-it-works" variant="secondaryglow">
             See how it works
@@ -34,7 +33,9 @@ export default function Hero() {
           </Button>
         </div>
       </section>
-      <WakaTimePopup />
+
+      <img className='w-100' src={"/small_demo_extension.gif"} alt="Loading..." />
+
     </div>
   )
 }
