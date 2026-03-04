@@ -17,7 +17,27 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title:
+          'Wakatime For Google Apps Script - Unofficial Wakatime integration for GAS projects',
+      },
+      {
+        name: 'description',
+        content:
+          'Track coding time in Google Apps Script projects with Wakatime. An unofficial browser extension that brings automatic time tracking to the Apps Script IDE.',
+      },
+      {
+        name: 'keywords',
+        content:
+          'Wakatime, Google Apps Script, GAS, time tracking, coding stats, browser extension',
+      },
+      {
+        property: 'og:title',
+        content: 'Wakatime for Google Apps Script',
+      },
+      {
+        property: 'og:description',
+        content:
+          'Track coding time in Google Apps Script projects with Wakatime. An unofficial browser extension that brings automatic time tracking to the Apps Script IDE.',
       },
     ],
     links: [

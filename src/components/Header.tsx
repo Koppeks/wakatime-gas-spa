@@ -23,10 +23,11 @@ export default function Header() {
     const visibleSections = new Set<string>()
 
     const pickActive = () => {
-      const nearBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 50
+      const nearBottom =
+        window.innerHeight + window.scrollY >= document.body.scrollHeight - 50
       if (nearBottom) {
         const last = sections[sections.length - 1]
-        setActiveSection(last?.id ?? null)
+        setActiveSection(last.id)
         return
       }
       const topmost = sections.find((s) => visibleSections.has(s.id))
@@ -55,17 +56,22 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--header-bg)] px-4 backdrop-blur-lg">
       <nav className="page-wrap flex items-center justify-between py-3 sm:py-4">
-
-        {/* Logo */}
         <div className="flex items-center gap-x-2 shrink-0">
-          <img src="/WakatimeIcon.svg" alt="WakaScript Logo" className="h-4 w-auto" />
-          <span className="font-semibold tracking-tight text-[var(--sea-ink)]">Wakatime</span>
+          <img
+            src="/WakatimeIcon.svg"
+            alt="WakaScript Logo"
+            className="h-4 w-auto"
+          />
+          <span className="font-semibold tracking-tight text-[var(--sea-ink)]">
+            Wakatime
+          </span>
           <span className="text-[var(--sea-ink-soft)]">for</span>
-          <span className="font-semibold italic tracking-tight text-cycle">Apps Script</span>
+          <span className="font-semibold italic tracking-tight text-cycle">
+            Apps Script
+          </span>
           <Pulse />
         </div>
 
-        {/* Center nav — desktop only */}
         <div className="hidden md:flex items-center gap-x-4 text-sm font-semibold absolute left-1/2 -translate-x-1/2">
           {NAV_LINKS.filter((l) => l.sectionId).map((link) => (
             <a
@@ -76,24 +82,34 @@ export default function Header() {
               {link.label}
             </a>
           ))}
-          <a href="https://wakatime.com/api" className="nav-link" target="_blank" rel="noreferrer">
+          <a
+            href="https://wakatime.com/api"
+            className="nav-link"
+            target="_blank"
+            rel="noreferrer"
+          >
             API Docs
           </a>
         </div>
 
-        {/* Right actions */}
         <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-          <a href="https://wakatime.com/dashboard" target="_blank" rel="noreferrer"
-            className="hidden md:block rounded-xl p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]">
+          <a
+            href="https://wakatime.com/dashboard"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden md:block rounded-xl p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]"
+          >
             <SiWakatime size={20} />
           </a>
-          <a href="https://github.com/Koppeks/wakatime-gas" target="_blank" rel="noreferrer"
-            className="hidden md:block rounded-xl p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]">
+          <a
+            href="https://github.com/Koppeks/wakatime-gas"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden md:block rounded-xl p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]"
+          >
             <SiGithub size={20} />
           </a>
           <ThemeToggle />
-
-          {/* Hamburger — mobile only */}
           <button
             type="button"
             className="md:hidden rounded-xl p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]"
@@ -103,10 +119,7 @@ export default function Header() {
             {mobileOpen ? <X size={20} /> : <MenuIcon size={20} />}
           </button>
         </div>
-
       </nav>
-
-      {/* Mobile dropdown — only one, only when open */}
       {mobileOpen && (
         <div className="md:hidden border-t border-[var(--line)] py-3 flex flex-col gap-1 text-sm font-semibold">
           {NAV_LINKS.filter((l) => l.sectionId).map((link) => (
@@ -129,17 +142,24 @@ export default function Header() {
             API Docs
           </a>
 
-          <section className='flex flex-row gap-2 mt-2'>
-            <a href="https://wakatime.com/dashboard" target="_blank" rel="noreferrer"
-              className="md:block rounded-xl p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]">
+          <section className="flex flex-row gap-2 mt-2">
+            <a
+              href="https://wakatime.com/dashboard"
+              target="_blank"
+              rel="noreferrer"
+              className="md:block rounded-xl p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]"
+            >
               <SiWakatime size={20} />
             </a>
-            <a href="https://github.com/Koppeks/wakatime-gas" target="_blank" rel="noreferrer"
-              className="md:block rounded-xl p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]">
+            <a
+              href="https://github.com/Koppeks/wakatime-gas"
+              target="_blank"
+              rel="noreferrer"
+              className="md:block rounded-xl p-2 text-[var(--sea-ink-soft)] transition hover:bg-[var(--link-bg-hover)] hover:text-[var(--sea-ink)]"
+            >
               <SiGithub size={20} />
             </a>
           </section>
-
         </div>
       )}
     </header>
