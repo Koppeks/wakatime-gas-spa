@@ -1,10 +1,8 @@
-## Wakatime For Apps Script SPA - Showcase Website
+## Wakatime For Apps Script SPA - Showcase Extension
 
 ![alt text](/public/SPA_hero.png)
 
-Live Site: \*\*\*
-
-The official landing page for the **Wakatime for Apps Script** browser extension.
+[Live Site](https://wakatime-for-apps-script.vercel.app/) - The official landing page for the **Wakatime for Apps Script** unofficial browser extension.
 
 ### 🎯 Purpose
 
